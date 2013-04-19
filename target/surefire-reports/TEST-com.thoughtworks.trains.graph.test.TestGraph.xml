@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite failures="0" time="0.091" errors="0" skipped="0" tests="10" name="com.thoughtworks.trains.graph.test.TestGraph">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_03\jre\bin"/>
+    <property name="java.vm.version" value="22.1-b02"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) Client VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="CN"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="Service Pack 1"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\workspace\thoughtworks\cloud-trains"/>
+    <property name="java.runtime.version" value="1.7.0_03-b05"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="basedir" value="C:\workspace\thoughtworks\cloud-trains"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.7.0_03\jre\lib\endorsed"/>
+    <property name="os.arch" value="x86"/>
+    <property name="surefire.real.class.path" value="C:\workspace\thoughtworks\cloud-trains\target\surefire\surefirebooter574468314841661421.jar"/>
+    <property name="java.io.tmpdir" value="C:\Users\ADMINI~1\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 7"/>
+    <property name="sun.jnu.encoding" value="GBK"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.7.0_03\jre\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Java\jdk1.7.0_03\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Services\IPT\;C:\Program Files\Common Files\Thunder Network\KanKan\Codecs;%JAVA_HOME/bin%;C:\Program Files\apache-ant-1.8.4\bin;C:\Program Files\Git\cmd;C:\Dwimperl\perl\bin;C:\Dwimperl\perl\site\bin;C:\Dwimperl\c\bin;;."/>
+    <property name="surefire.test.class.path" value="C:\workspace\thoughtworks\cloud-trains\target\test-classes;C:\workspace\thoughtworks\cloud-trains\target\classes;C:\Users\Administrator\.m2\repository\junit\junit\4.8.1\junit-4.8.1.jar;C:\Users\Administrator\.m2\repository\org\hamcrest\hamcrest-all\1.3\hamcrest-all-1.3.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\plugins\maven-resources-plugin\2.4.3\maven-resources-plugin-2.4.3.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\maven-plugin-api\2.0.6\maven-plugin-api-2.0.6.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\maven-project\2.0.6\maven-project-2.0.6.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\maven-profile\2.0.6\maven-profile-2.0.6.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\maven-artifact-manager\2.0.6\maven-artifact-manager-2.0.6.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\maven-plugin-registry\2.0.6\maven-plugin-registry-2.0.6.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\maven-core\2.0.6\maven-core-2.0.6.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\wagon\wagon-file\1.0-beta-2\wagon-file-1.0-beta-2.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\maven-plugin-parameter-documenter\2.0.6\maven-plugin-parameter-documenter-2.0.6.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\wagon\wagon-http-lightweight\1.0-beta-2\wagon-http-lightweight-1.0-beta-2.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\wagon\wagon-http-shared\1.0-beta-2\wagon-http-shared-1.0-beta-2.jar;C:\Users\Administrator\.m2\repository\jtidy\jtidy\4aug2000r7-dev\jtidy-4aug2000r7-dev.jar;C:\Users\Administrator\.m2\repository\xml-apis\xml-apis\1.0.b2\xml-apis-1.0.b2.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\reporting\maven-reporting-api\2.0.6\maven-reporting-api-2.0.6.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\doxia\doxia-sink-api\1.0-alpha-7\doxia-sink-api-1.0-alpha-7.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\wagon\wagon-provider-api\1.0-beta-2\wagon-provider-api-1.0-beta-2.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\maven-repository-metadata\2.0.6\maven-repository-metadata-2.0.6.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\maven-error-diagnostics\2.0.6\maven-error-diagnostics-2.0.6.jar;C:\Users\Administrator\.m2\repository\commons-cli\commons-cli\1.0\commons-cli-1.0.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\wagon\wagon-ssh-external\1.0-beta-2\wagon-ssh-external-1.0-beta-2.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\wagon\wagon-ssh-common\1.0-beta-2\wagon-ssh-common-1.0-beta-2.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\maven-plugin-descriptor\2.0.6\maven-plugin-descriptor-2.0.6.jar;C:\Users\Administrator\.m2\repository\org\codehaus\plexus\plexus-interactivity-api\1.0-alpha-4\plexus-interactivity-api-1.0-alpha-4.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\wagon\wagon-ssh\1.0-beta-2\wagon-ssh-1.0-beta-2.jar;C:\Users\Administrator\.m2\repository\com\jcraft\jsch\0.1.27\jsch-0.1.27.jar;C:\Users\Administrator\.m2\repository\classworlds\classworlds\1.1\classworlds-1.1.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\maven-artifact\2.0.6\maven-artifact-2.0.6.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\maven-settings\2.0.6\maven-settings-2.0.6.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\maven-model\2.0.6\maven-model-2.0.6.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\maven-monitor\2.0.6\maven-monitor-2.0.6.jar;C:\Users\Administrator\.m2\repository\org\codehaus\plexus\plexus-container-default\1.0-alpha-9-stable-1\plexus-container-default-1.0-alpha-9-stable-1.jar;C:\Users\Administrator\.m2\repository\org\codehaus\plexus\plexus-utils\2.0.5\plexus-utils-2.0.5.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\shared\maven-filtering\1.0-beta-4\maven-filtering-1.0-beta-4.jar;C:\Users\Administrator\.m2\repository\org\sonatype\plexus\plexus-build-api\0.0.4\plexus-build-api-0.0.4.jar;C:\Users\Administrator\.m2\repository\org\codehaus\plexus\plexus-interpolation\1.13\plexus-interpolation-1.13.jar;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="51.0"/>
+    <property name="sun.management.compiler" value="HotSpot Client Compiler"/>
+    <property name="os.version" value="6.1"/>
+    <property name="user.home" value="C:\Users\Administrator"/>
+    <property name="user.timezone" value=""/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.7"/>
+    <property name="file.encoding" value="GBK"/>
+    <property name="user.name" value="Administrator"/>
+    <property name="java.class.path" value="C:\workspace\thoughtworks\cloud-trains\target\test-classes;C:\workspace\thoughtworks\cloud-trains\target\classes;C:\Users\Administrator\.m2\repository\junit\junit\4.8.1\junit-4.8.1.jar;C:\Users\Administrator\.m2\repository\org\hamcrest\hamcrest-all\1.3\hamcrest-all-1.3.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\plugins\maven-resources-plugin\2.4.3\maven-resources-plugin-2.4.3.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\maven-plugin-api\2.0.6\maven-plugin-api-2.0.6.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\maven-project\2.0.6\maven-project-2.0.6.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\maven-profile\2.0.6\maven-profile-2.0.6.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\maven-artifact-manager\2.0.6\maven-artifact-manager-2.0.6.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\maven-plugin-registry\2.0.6\maven-plugin-registry-2.0.6.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\maven-core\2.0.6\maven-core-2.0.6.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\wagon\wagon-file\1.0-beta-2\wagon-file-1.0-beta-2.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\maven-plugin-parameter-documenter\2.0.6\maven-plugin-parameter-documenter-2.0.6.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\wagon\wagon-http-lightweight\1.0-beta-2\wagon-http-lightweight-1.0-beta-2.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\wagon\wagon-http-shared\1.0-beta-2\wagon-http-shared-1.0-beta-2.jar;C:\Users\Administrator\.m2\repository\jtidy\jtidy\4aug2000r7-dev\jtidy-4aug2000r7-dev.jar;C:\Users\Administrator\.m2\repository\xml-apis\xml-apis\1.0.b2\xml-apis-1.0.b2.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\reporting\maven-reporting-api\2.0.6\maven-reporting-api-2.0.6.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\doxia\doxia-sink-api\1.0-alpha-7\doxia-sink-api-1.0-alpha-7.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\wagon\wagon-provider-api\1.0-beta-2\wagon-provider-api-1.0-beta-2.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\maven-repository-metadata\2.0.6\maven-repository-metadata-2.0.6.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\maven-error-diagnostics\2.0.6\maven-error-diagnostics-2.0.6.jar;C:\Users\Administrator\.m2\repository\commons-cli\commons-cli\1.0\commons-cli-1.0.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\wagon\wagon-ssh-external\1.0-beta-2\wagon-ssh-external-1.0-beta-2.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\wagon\wagon-ssh-common\1.0-beta-2\wagon-ssh-common-1.0-beta-2.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\maven-plugin-descriptor\2.0.6\maven-plugin-descriptor-2.0.6.jar;C:\Users\Administrator\.m2\repository\org\codehaus\plexus\plexus-interactivity-api\1.0-alpha-4\plexus-interactivity-api-1.0-alpha-4.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\wagon\wagon-ssh\1.0-beta-2\wagon-ssh-1.0-beta-2.jar;C:\Users\Administrator\.m2\repository\com\jcraft\jsch\0.1.27\jsch-0.1.27.jar;C:\Users\Administrator\.m2\repository\classworlds\classworlds\1.1\classworlds-1.1.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\maven-artifact\2.0.6\maven-artifact-2.0.6.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\maven-settings\2.0.6\maven-settings-2.0.6.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\maven-model\2.0.6\maven-model-2.0.6.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\maven-monitor\2.0.6\maven-monitor-2.0.6.jar;C:\Users\Administrator\.m2\repository\org\codehaus\plexus\plexus-container-default\1.0-alpha-9-stable-1\plexus-container-default-1.0-alpha-9-stable-1.jar;C:\Users\Administrator\.m2\repository\org\codehaus\plexus\plexus-utils\2.0.5\plexus-utils-2.0.5.jar;C:\Users\Administrator\.m2\repository\org\apache\maven\shared\maven-filtering\1.0-beta-4\maven-filtering-1.0-beta-4.jar;C:\Users\Administrator\.m2\repository\org\sonatype\plexus\plexus-build-api\0.0.4\plexus-build-api-0.0.4.jar;C:\Users\Administrator\.m2\repository\org\codehaus\plexus\plexus-interpolation\1.13\plexus-interpolation-1.13.jar;"/>
+    <property name="java.vm.specification.version" value="1.7"/>
+    <property name="sun.arch.data.model" value="32"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.7.0_03\jre"/>
+    <property name="sun.java.command" value="C:\workspace\thoughtworks\cloud-trains\target\surefire\surefirebooter574468314841661421.jar C:\workspace\thoughtworks\cloud-trains\target\surefire\surefire176109042738771796tmp C:\workspace\thoughtworks\cloud-trains\target\surefire\surefire7496823502980478260tmp"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="zh"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.version" value="1.7.0_03"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.7.0_03\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.7.0_03\jre\lib\resources.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\rt.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\jce.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.7.0_03\jre\classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="localRepository" value="C:\Users\Administrator\.m2\repository"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
+  </properties>
+  <testcase time="0.016" classname="com.thoughtworks.trains.graph.test.TestGraph" name="testA_C_shortestPath_step8"/>
+  <testcase time="0" classname="com.thoughtworks.trains.graph.test.TestGraph" name="testB_B_shortestPath_step9"/>
+  <testcase time="0.001" classname="com.thoughtworks.trains.graph.test.TestGraph" name="testC_C_with_maximum3stops_step_6"/>
+  <testcase time="0" classname="com.thoughtworks.trains.graph.test.TestGraph" name="testA_C_withexactly4stops_step7"/>
+  <testcase time="0.001" classname="com.thoughtworks.trains.graph.test.TestGraph" name="testC_C_totalWeightless30_step10"/>
+  <testcase time="0" classname="com.thoughtworks.trains.graph.test.TestGraph" name="testA_B_C_step1"/>
+  <testcase time="0.001" classname="com.thoughtworks.trains.graph.test.TestGraph" name="testA_D_step2"/>
+  <testcase time="0" classname="com.thoughtworks.trains.graph.test.TestGraph" name="testA_D_C_step3"/>
+  <testcase time="0" classname="com.thoughtworks.trains.graph.test.TestGraph" name="testA_E_B_C_D_step4"/>
+  <testcase time="0" classname="com.thoughtworks.trains.graph.test.TestGraph" name="testA_E_D_step5"/>
+</testsuite>
