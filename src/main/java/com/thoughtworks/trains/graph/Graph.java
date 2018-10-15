@@ -1,10 +1,6 @@
 package com.thoughtworks.trains.graph;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Graph<T> {
     private Map<T, List<Edge<T>>> nodeEdgeMap;
@@ -21,13 +17,14 @@ public class Graph<T> {
         return getDistanceFromPath(generatePath(start, end, passby));
     }
 
-    public void addNode(T node) {
-        if (!nodeEdgeMap.containsKey(node)) {
-            nodeEdgeMap.put(node, new ArrayList<>());
+    @SuppressWarnings("unchecked")
+    public void addAllEdges(List<Edge<T>> edgeList) {
+        for(Edge edge: edgeList) {
+            addEdge(edge);
         }
     }
 
-    public void addEdge(Edge<T> edge) {
+    private void addEdge(Edge<T> edge) {
         T from = edge.getFrom();
         if (nodeEdgeMap.containsKey(from)) {
             if (nodeEdgeMap.get(from).contains(edge)) {
@@ -35,9 +32,9 @@ public class Graph<T> {
             }
             nodeEdgeMap.get(from).add(edge);
         } else {
-            List<Edge<T>> newEdge = new ArrayList<>();
-            newEdge.add(edge);
-            nodeEdgeMap.put(edge.getFrom(), newEdge);
+            List<Edge<T>> edgeList = new ArrayList<>();
+            edgeList.add(edge);
+            nodeEdgeMap.put(edge.getFrom(), edgeList);
         }
     }
 
@@ -57,21 +54,16 @@ public class Graph<T> {
         List<Edge<T>> allEdgeList = getAllEdge();
         List<Edge<T>> edgeList = path.getEdgeList();
         if (!allEdgeList.containsAll(edgeList)) {
-            return "";
+            return "NO SUCH ROUTE";
         }
-        int distance = 0;
-        for (Edge<?> edge : edgeList) {
-            distance += edge.getWeight();
-        }
-        return String.valueOf(distance);
+        return String.valueOf(edgeList.stream()
+            .map(edge -> allEdgeList.get(allEdgeList.lastIndexOf(edge)).getWeight()).mapToInt(i -> i).sum());
     }
 
     private List<Edge<T>> getAllEdge() {
-        List<Edge<T>> allEdgeList = new ArrayList<>();
-        Collection<List<Edge<T>>> edgeListCollection = nodeEdgeMap.values();
-        for (List<Edge<T>> list : edgeListCollection) {
-            allEdgeList.addAll(list);
-        }
-        return allEdgeList;
+        return nodeEdgeMap.values().stream().reduce(new ArrayList<>(), (result, edgeList) -> {
+            result.addAll(edgeList);
+            return result;
+        });
     }
 }

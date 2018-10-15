@@ -3,10 +3,10 @@ package com.thoughtworks.trains.graph;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Path<H> implements Comparable<Path<H>>{
-	private List<Edge<H>> edgeList;
-	private H start;
-	private H end;
+public class Path<T> implements Comparable<Path<T>>{
+	private List<Edge<T>> edgeList;
+	private T start;
+	private T end;
     private int totalWright;
 	
 	private Path() {
@@ -14,17 +14,17 @@ public class Path<H> implements Comparable<Path<H>>{
 		this.totalWright = 0;
 	}
 
-    public Path(H start) {
+    public Path(T start) {
 		this();
 		this.start = start;
 	}
 
-	Path(H start, H end) {
+	Path(T start, T end) {
 		this(start);
 		this.end = end;
 	}
 	
-	private Path(Path<H> path){
+	private Path(Path<T> path){
 		this.start = path.getStart();
 		this.end = path.getEnd();
 		this.edgeList = new LinkedList<>();
@@ -32,37 +32,37 @@ public class Path<H> implements Comparable<Path<H>>{
 		this.totalWright = path.getTotalWeight();
 	}
 
-	private H getStart() {
+	private T getStart() {
 		return start;
 	}
 
-    private H getEnd() {
+    private T getEnd() {
 		return end;
 	}
 
-    public void addEdge(Edge<H> edge) {
+    public void addEdge(Edge<T> edge) {
 		this.edgeList.add(edge);
 		totalWright += edge.getWeight();
 	}
 
-	public List<Edge<H>> getEdgeList() {
+	public List<Edge<T>> getEdgeList() {
 		return edgeList;
 	}
 
-    public Edge<H> removeLastNode() {
-		Edge<H> edge = this.edgeList.remove(edgeList.size() - 1);
+    public Edge<T> removeLastNode() {
+		Edge<T> edge = this.edgeList.remove(edgeList.size() - 1);
 		this.totalWright -= edge.getWeight();
 		return edge;
 	}
 
-	public H getCurrentNode() {
+	public T getCurrentNode() {
 		return this.edgeList.get(edgeList.size() - 1).getTo();
 	}
 
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		for(Edge<H> edge : edgeList){
+		for(Edge<T> edge : edgeList){
 			sb.append(edge.toString());
 		}
 		return sb.toString();
@@ -76,7 +76,7 @@ public class Path<H> implements Comparable<Path<H>>{
 		return totalWright;
 	}
 
-    public int compareTo(Path<H> otherPath) {
+    public int compareTo(Path<T> otherPath) {
 		int otherWeight = otherPath.getTotalWeight();
 		return this.getTotalWeight() - otherWeight;
 	}

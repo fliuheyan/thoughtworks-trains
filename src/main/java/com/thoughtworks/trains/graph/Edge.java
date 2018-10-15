@@ -20,11 +20,11 @@ public class Edge<T> {
         this.weight = weight;
     }
 
-    public T getFrom() {
+    T getFrom() {
         return from;
     }
 
-    public T getTo() {
+    T getTo() {
         return to;
     }
 
@@ -34,10 +34,9 @@ public class Edge<T> {
 
     @Override
     public boolean equals(Object obj) {
-        Edge<?> edge = (Edge<?>) obj;
-        return (this.getClass().equals(obj.getClass()) &&
-            this.from.equals(edge.getFrom())) &&
-            (this.to.equals(edge.getTo()));
+        return (obj instanceof Edge &&
+            this.from.equals(((Edge<?>) obj).getFrom())) &&
+            (this.to.equals(((Edge<?>) obj).getTo()));
     }
 
     @Override
@@ -47,6 +46,6 @@ public class Edge<T> {
 
     @Override
     public String toString() {
-        return "(" + from.toString() + "," + to.toString() + ")";
+        return "(" + from.toString() + "," + to.toString() + ")" + weight;
     }
 }

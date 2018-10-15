@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.thoughtworks.trains.TrainRouteGeneratorTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2018-10-15T07:41:44" hostname="mac" time="0.029">
+  <properties/>
+  <testcase name="testA_C_shortestPath_step8" classname="com.thoughtworks.trains.TrainRouteGeneratorTest" time="0.016"/>
+  <testcase name="testA_D_step2" classname="com.thoughtworks.trains.TrainRouteGeneratorTest" time="0.007"/>
+  <testcase name="testA_E_B_C_D_step4" classname="com.thoughtworks.trains.TrainRouteGeneratorTest" time="0.0"/>
+  <testcase name="testA_E_D_step5" classname="com.thoughtworks.trains.TrainRouteGeneratorTest" time="0.0"/>
+  <testcase name="testA_B_C_step1" classname="com.thoughtworks.trains.TrainRouteGeneratorTest" time="0.0"/>
+  <testcase name="testB_B_shortestPath_step9" classname="com.thoughtworks.trains.TrainRouteGeneratorTest" time="0.001"/>
+  <testcase name="testA_D_C_step3" classname="com.thoughtworks.trains.TrainRouteGeneratorTest" time="0.001"/>
+  <testcase name="testA_C_withexactly4stops_step7" classname="com.thoughtworks.trains.TrainRouteGeneratorTest" time="0.0"/>
+  <testcase name="testC_C_with_maximum3stops_step_6" classname="com.thoughtworks.trains.TrainRouteGeneratorTest" time="0.0"/>
+  <testcase name="testC_C_totalWeightless30_step10" classname="com.thoughtworks.trains.TrainRouteGeneratorTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
