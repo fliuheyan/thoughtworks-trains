@@ -13,33 +13,12 @@ public class Graph<T> {
         nodeEdgeMap = new HashMap<>();
     }
 
-    public int getDistance(T start, T end, T[] passby) {
+    public List<Edge<T>> getAllAdjacent(T node) {
+        return nodeEdgeMap.get(node);
+    }
+
+    public String getDistance(T start, T end, T[] passby) {
         return getDistanceFromPath(generatePath(start, end, passby));
-    }
-
-    private Path<T> generatePath(T start, T end, T[] passby) {
-        Path<T> path = new Path<>(start, end);
-        T current = start;
-        for (T s : passby) {
-            Edge<T> edge = new Edge<>(current, s);
-            current = s;
-            path.addEdge(edge);
-        }
-        path.addEdge(new Edge<>(current, end));
-        return path;
-    }
-
-    private int getDistanceFromPath(Path<T> path) {
-        List<Edge<T>> allEdgeList = getAllEdge();
-        List<Edge<T>> edgeList = path.getEdgeList();
-        if (!allEdgeList.containsAll(edgeList)) {
-            return -1;
-        }
-        int distance = 0;
-        for (Edge<?> edge : edgeList) {
-            distance += edge.getWeight();
-        }
-        return distance;
     }
 
     public void addNode(T node) {
@@ -62,6 +41,31 @@ public class Graph<T> {
         }
     }
 
+    private Path<T> generatePath(T start, T end, T[] passby) {
+        Path<T> path = new Path<>(start, end);
+        T current = start;
+        for (T s : passby) {
+            Edge<T> edge = new Edge<>(current, s);
+            current = s;
+            path.addEdge(edge);
+        }
+        path.addEdge(new Edge<>(current, end));
+        return path;
+    }
+
+    private String getDistanceFromPath(Path<T> path) {
+        List<Edge<T>> allEdgeList = getAllEdge();
+        List<Edge<T>> edgeList = path.getEdgeList();
+        if (!allEdgeList.containsAll(edgeList)) {
+            return "";
+        }
+        int distance = 0;
+        for (Edge<?> edge : edgeList) {
+            distance += edge.getWeight();
+        }
+        return String.valueOf(distance);
+    }
+
     private List<Edge<T>> getAllEdge() {
         List<Edge<T>> allEdgeList = new ArrayList<>();
         Collection<List<Edge<T>>> edgeListCollection = nodeEdgeMap.values();
@@ -69,9 +73,5 @@ public class Graph<T> {
             allEdgeList.addAll(list);
         }
         return allEdgeList;
-    }
-
-    public List<Edge<T>> getAllAdjacent(T node) {
-        return nodeEdgeMap.get(node);
     }
 }

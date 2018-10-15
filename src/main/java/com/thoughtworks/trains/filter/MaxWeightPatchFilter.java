@@ -14,6 +14,6 @@ public class MaxWeightPatchFilter<T> implements PathFilter<T> {
 	}
 
 	public boolean passFilter(Path<T> path) {
-		return path.getTotalweight() < maxWeight;
+		return path.getTotalWeight() < maxWeight;
 	}
 }

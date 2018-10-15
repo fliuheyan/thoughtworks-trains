@@ -3,66 +3,66 @@ package com.thoughtworks.trains.graph;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Path<T> implements Comparable<Path<T>>{
-	private List<Edge<T>> edgeList;
-	private T start;
-	private T end;
-    private int totalweight;
+public class Path<H> implements Comparable<Path<H>>{
+	private List<Edge<H>> edgeList;
+	private H start;
+	private H end;
+    private int totalWright;
 	
-	public Path() {
+	private Path() {
 		this.edgeList = new LinkedList<>();
-		this.totalweight = 0;
+		this.totalWright = 0;
 	}
 
-	public Path(T start) {
+    public Path(H start) {
 		this();
 		this.start = start;
 	}
 
-	public Path(T start, T end) {
+	Path(H start, H end) {
 		this(start);
 		this.end = end;
 	}
 	
-	public Path(Path<T> path){
+	private Path(Path<H> path){
 		this.start = path.getStart();
 		this.end = path.getEnd();
 		this.edgeList = new LinkedList<>();
 		this.edgeList.addAll(path.getEdgeList());
-		this.totalweight = path.getTotalweight();
+		this.totalWright = path.getTotalWeight();
 	}
 
-	private T getStart() {
+	private H getStart() {
 		return start;
 	}
 
-    private T getEnd() {
+    private H getEnd() {
 		return end;
 	}
 
-    public void addEdge(Edge<T> edge) {
+    public void addEdge(Edge<H> edge) {
 		this.edgeList.add(edge);
-		totalweight += edge.getWeight();
+		totalWright += edge.getWeight();
 	}
 
-	public List<Edge<T>> getEdgeList() {
+	public List<Edge<H>> getEdgeList() {
 		return edgeList;
 	}
 
-    public Edge<T> removeLastNode() {
-		Edge<T> edge = this.edgeList.remove(edgeList.size() - 1);
-		this.totalweight -= edge.getWeight();
+    public Edge<H> removeLastNode() {
+		Edge<H> edge = this.edgeList.remove(edgeList.size() - 1);
+		this.totalWright -= edge.getWeight();
 		return edge;
 	}
 
-	public T getCurrentNode() {
+	public H getCurrentNode() {
 		return this.edgeList.get(edgeList.size() - 1).getTo();
 	}
 
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		for(Edge<T> edge : edgeList){
+		for(Edge<H> edge : edgeList){
 			sb.append(edge.toString());
 		}
 		return sb.toString();
@@ -72,12 +72,14 @@ public class Path<T> implements Comparable<Path<T>>{
 		return new Path<>(path);
 	}
 
-	public int getTotalweight() {
-		return totalweight;
+	public int getTotalWeight() {
+		return totalWright;
 	}
 
-    public int compareTo(Path<T> otherPath) {
-		int otherWeight = otherPath.getTotalweight();
-		return this.getTotalweight() - otherWeight;
+    public int compareTo(Path<H> otherPath) {
+		int otherWeight = otherPath.getTotalWeight();
+		return this.getTotalWeight() - otherWeight;
 	}
+
+
 }
