@@ -2,7 +2,6 @@ package com.thoughtworks.trains;
 
 import com.thoughtworks.trains.filter.MaxStopsPathFilter;
 import com.thoughtworks.trains.filter.MaxWeightPatchFilter;
-import com.thoughtworks.trains.filter.NoRepeatedPathFilter;
 import com.thoughtworks.trains.filter.PathFilter;
 import com.thoughtworks.trains.graph.Graph;
 import com.thoughtworks.trains.graph.Path;
@@ -12,14 +11,13 @@ import org.junit.Test;
 import java.util.List;
 
 import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 public class TrainRouteGeneratorTest {
     private Graph<String> graph;
     private TrainRouteGenerator generator;
     private PathFilter<String> maxStopsFilter4;
     private PathFilter<String> maxWeightFilter;
-    private PathFilter<String> noRepeatedFilter;
 
     @Before
     public void init() {
@@ -28,14 +26,13 @@ public class TrainRouteGeneratorTest {
         graph = generator.generateGraph(graph1Edges);
         maxStopsFilter4 = new MaxStopsPathFilter<>(4);
         maxWeightFilter = new MaxWeightPatchFilter<>(30);
-        noRepeatedFilter = new NoRepeatedPathFilter<>();
     }
 
     @Test
     public void testA_B_C_step1() {
         String[] stops = {"B"};
         String result = graph.getDistance("A", "C", stops);
-        assertThat(result, is(9));
+        assertThat(result, is("9"));
     }
 
     @Test
@@ -63,7 +60,7 @@ public class TrainRouteGeneratorTest {
     public void testA_E_D_step5() {
         String[] stops = {"E"};
         String result = graph.getDistance("A", "C", stops);
-        assertThat(result, is("No "));
+        assertThat(result, is("NO SUCH ROUTE"));
     }
 
     @Test
@@ -72,7 +69,7 @@ public class TrainRouteGeneratorTest {
         String to = "C";
         List<Path<String>> list = generator.generatePath(graph, from, to,
             maxStopsFilter4);
-        assertThat(list.size(), is(2));
+        assertThat(list.size(), is("2"));
     }
 
     @Test
@@ -81,7 +78,7 @@ public class TrainRouteGeneratorTest {
         String to = "C";
         List<Path<String>> list = generator.generatePath(graph, from, to,
             maxStopsFilter4);
-        assertThat(list.size(), is(3));
+        assertThat(list.size(), is("3"));
     }
 
     @Test
@@ -89,7 +86,7 @@ public class TrainRouteGeneratorTest {
         String from = "A";
         String to = "C";
         Path<String> path = this.generator.getShortestPathFromPathList(graph, from, to);
-        assertThat(path.getTotalWeight(), is(9));
+        assertThat(path.getTotalWeight(), is("9"));
     }
 
     @Test
@@ -97,7 +94,7 @@ public class TrainRouteGeneratorTest {
         String from = "B";
         String to = "B";
         Path<String> path = this.generator.getShortestPathFromPathList(graph, from, to);
-        assertThat(path.getTotalWeight(), is(9));
+        assertThat(path.getTotalWeight(), is("9"));
     }
 
     @Test
@@ -105,6 +102,6 @@ public class TrainRouteGeneratorTest {
         String from = "C";
         String to = "C";
         List<Path<String>> list = generator.generatePath(graph, from, to, maxWeightFilter);
-        assertThat(list.size(), is(7));
+        assertThat(list.size(), is("7"));
     }
 }

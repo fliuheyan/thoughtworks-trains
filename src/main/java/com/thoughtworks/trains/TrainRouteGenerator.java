@@ -14,11 +14,12 @@ public class TrainRouteGenerator {
         Graph<String> graph = new Graph<>();
         String[] edgeStrings = edges.split(",");
         for (String edgeString : edgeStrings) {
-            String from = String.valueOf(edgeString.charAt(0));
-            String to = String.valueOf(edgeString.charAt(1));
+            String trimString = edgeString.trim();
+            String from = String.valueOf(trimString.charAt(0));
+            String to = String.valueOf(trimString.charAt(1));
             graph.addNode(from);
             graph.addNode(to);
-            Edge<String> edge = new Edge<>(from, to, edgeString.charAt(2) - '0');
+            Edge<String> edge = new Edge<>(from, to, trimString.charAt(2) - '0');
             graph.addEdge(edge);
         }
         return graph;
