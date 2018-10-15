@@ -4,6 +4,6 @@ import com.thoughtworks.trains.graph.Path;
 
 public interface PathFilter<T> {
 
-	public boolean passFilter(Path<T> path);
+	boolean passFilter(Path<T> path);
 	
 }

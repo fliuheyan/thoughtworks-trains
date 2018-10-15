@@ -7,8 +7,8 @@ import com.thoughtworks.trains.graph.Graph;
 import com.thoughtworks.trains.graph.Path;
 
 public interface TrainsPathService {
-	public <T> List<Path<T>> generatePath(Graph<T> graph, T start, T end,
-			PathFilter<T> pathFilter);
+	<T> List<Path<T>> generatePath(Graph<T> graph, T start, T end,
+								   PathFilter<T> pathFilter);
 
-	public <T> Path<T> getShortestPathFromPathList(Graph<T> graph, T start, T end);
+	<T> Path<T> getShortestPathFromPathList(Graph<T> graph, T start, T end);
 }

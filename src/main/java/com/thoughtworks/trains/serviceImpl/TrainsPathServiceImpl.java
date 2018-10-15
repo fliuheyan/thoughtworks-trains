@@ -14,10 +14,10 @@ import com.thoughtworks.trains.service.TrainsPathService;
 public class TrainsPathServiceImpl implements TrainsPathService {
 	public <T> List<Path<T>> generatePath(Graph<T> graph, T start, T end,
 			PathFilter<T> pathFilter) {
-		List<Path<T>> pathList = new ArrayList<Path<T>>();
+		List<Path<T>> pathList = new ArrayList<>();
 		List<Edge<T>> adjacentList = graph.getAllAdjacent(start);
 		for (Edge<T> edge : adjacentList) {
-			Path<T> path = new Path<T>(start);
+			Path<T> path = new Path<>(start);
 			path.addEdge(edge);
 			pathList.addAll(generatePathFromPath(graph, path, end, pathFilter));
 		}
@@ -26,7 +26,7 @@ public class TrainsPathServiceImpl implements TrainsPathService {
 	
 	private <T> List<Path<T>> generatePathFromPath(Graph<T> graph, Path<T> path,
 			T end, PathFilter<T> pathFilter) {
-		List<Path<T>> pathList = new ArrayList<Path<T>>();
+		List<Path<T>> pathList = new ArrayList<>();
 		if (pathFilter.passFilter(path)) {
 			T pathCurrent = path.getCurrentNode();
 			if (pathCurrent.equals(end)) {
@@ -43,7 +43,7 @@ public class TrainsPathServiceImpl implements TrainsPathService {
 	}
 	
 	public <T> Path<T> getShortestPathFromPathList(Graph<T> graph, T start, T end) {
-		List<Path<T>> pathList = generatePath(graph,start,end,new NoRepeatedPathFilter<T>());
+		List<Path<T>> pathList = generatePath(graph,start,end, new NoRepeatedPathFilter<>());
 		return Collections.min(pathList);
 	}
 

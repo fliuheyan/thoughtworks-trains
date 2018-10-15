@@ -14,15 +14,6 @@ public class MaxStopsPathFilter<T> implements PathFilter<T> {
 	}
 
 	public boolean passFilter(Path<T> path) {
-		return path.getEdgeList().size() < getMaxStops();
+		return path.getEdgeList().size() < maxStops;
 	}
-
-	public int getMaxStops() {
-		return maxStops;
-	}
-
-	public void setMaxStops(int maxStops) {
-		this.maxStops = maxStops;
-	}
-
 }

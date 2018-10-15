@@ -7,11 +7,10 @@ public class Path<T> implements Comparable<Path<T>>{
 	private List<Edge<T>> edgeList;
 	private T start;
 	private T end;
-	private List<T> passyByList;
-	private int totalweight;
+    private int totalweight;
 	
 	public Path() {
-		this.edgeList = new LinkedList<Edge<T>>();
+		this.edgeList = new LinkedList<>();
 		this.totalweight = 0;
 	}
 
@@ -28,42 +27,20 @@ public class Path<T> implements Comparable<Path<T>>{
 	public Path(Path<T> path){
 		this.start = path.getStart();
 		this.end = path.getEnd();
-		this.edgeList = new LinkedList<Edge<T>>();
+		this.edgeList = new LinkedList<>();
 		this.edgeList.addAll(path.getEdgeList());
 		this.totalweight = path.getTotalweight();
 	}
 
-	public T getStart() {
+	private T getStart() {
 		return start;
 	}
 
-	public void setStart(T start) {
-		this.start = start;
-	}
-
-	public T getEnd() {
+    private T getEnd() {
 		return end;
 	}
 
-	public void setEnd(T end) {
-		this.end = end;
-	}
-
-	public List<T> getPassyByList() {
-		return passyByList;
-	}
-
-	public void setPassyByList(List<T> passyByList) {
-		this.passyByList = passyByList;
-	}
-
-	public List<Edge<?>> convertToEdgeList() {
-
-		return null;
-
-	}
-
-	public void addEdge(Edge<T> edge) {
+    public void addEdge(Edge<T> edge) {
 		this.edgeList.add(edge);
 		totalweight += edge.getWeight();
 	}
@@ -72,11 +49,7 @@ public class Path<T> implements Comparable<Path<T>>{
 		return edgeList;
 	}
 
-	public void setEdgeList(List<Edge<T>> edgeList) {
-		this.edgeList = edgeList;
-	}
-
-	public Edge<T> removeLastNode() {
+    public Edge<T> removeLastNode() {
 		Edge<T> edge = this.edgeList.remove(edgeList.size() - 1);
 		this.totalweight -= edge.getWeight();
 		return edge;
@@ -96,32 +69,15 @@ public class Path<T> implements Comparable<Path<T>>{
 	}
 
 	public static <T> Path<T> deepCopy(Path<T> path){
-		return new Path<T>(path);
+		return new Path<>(path);
 	}
 
 	public int getTotalweight() {
 		return totalweight;
 	}
 
-	public void setTotalweight(int totalweight) {
-		this.totalweight = totalweight;
-	}
-
-	public int compareTo(Path<T> otherPath) {
+    public int compareTo(Path<T> otherPath) {
 		int otherWeight = otherPath.getTotalweight();
 		return this.getTotalweight() - otherWeight;
 	}
-	
-	// @Override
-	// public boolean equals(Object obj){
-	// Path<?> path = (Path<?>)obj;
-	// return
-	// (this.start.equals(path.getStart()))&&(this.end.equals(path.getEnd()));
-	// }
-	//
-	// @Override
-	// public int hashCode(){
-	// return 0;
-	// }
-	//
 }
